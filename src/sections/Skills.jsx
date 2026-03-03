@@ -2,34 +2,26 @@ import { skills } from '../data/skills';
 
 function Skills() {
   return (
-    <section id="skills">
-      <div className="container">
-        <h2 className="section-title">Skills</h2>
-        <p className="section-subtitle">Technologies I work with</p>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-          gap: '2rem',
-        }}>
+    <section id="skills" className="py-20">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl font-bold mb-2">Skills</h2>
+        <p className="text-muted text-gray-500 mb-10">Technologies I work with</p>
+
+        <div className="grid md:grid-cols-3 gap-6">
           {skills.map((category) => (
-            <div key={category.title} style={{
-              padding: '2rem',
-              backgroundColor: 'var(--card-bg)',
-              borderRadius: '12px',
-              border: '1px solid var(--border)',
-            }}>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '1.5rem', color: 'var(--accent)' }}>
+            <div
+              key={category.title}
+              className="card bg-white p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow duration-300"
+            >
+              <h3 className="text-lg font-semibold text-primary mb-4">
                 {category.title}
               </h3>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+              <div className="flex flex-wrap gap-2">
                 {category.items.map((skill) => (
-                  <span key={skill} style={{
-                    padding: '0.4rem 1rem',
-                    backgroundColor: 'var(--bg-secondary)',
-                    borderRadius: '20px',
-                    fontSize: '0.85rem',
-                    fontWeight: 500,
-                  }}>
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 bg-gray-100 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors duration-200 cursor-default"
+                  >
                     {skill}
                   </span>
                 ))}

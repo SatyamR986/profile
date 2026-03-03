@@ -3,15 +3,12 @@ import ProjectCard from '../components/ProjectCard/ProjectCard';
 
 function Projects() {
   return (
-    <section id="projects" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-      <div className="container">
-        <h2 className="section-title">Projects</h2>
-        <p className="section-subtitle">Some things I've built</p>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '2rem',
-        }}>
+    <section id="projects" className="py-20 bg-alt bg-gray-50">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl font-bold mb-2">Projects</h2>
+        <p className="text-muted text-gray-500 mb-10">Some things I've built</p>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}

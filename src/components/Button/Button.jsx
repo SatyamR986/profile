@@ -1,40 +1,26 @@
 function Button({ children, href, variant = 'primary', onClick, ...props }) {
-  const baseStyles = {
-    display: 'inline-block',
-    padding: '0.75rem 1.75rem',
-    borderRadius: '8px',
-    fontWeight: 600,
-    fontSize: '1rem',
-    cursor: 'pointer',
-    transition: 'var(--transition)',
-    border: 'none',
-    textAlign: 'center',
-  };
+  const base =
+    'inline-block px-7 py-3 rounded-lg font-semibold text-base cursor-pointer transition-all duration-300 text-center';
 
   const variants = {
-    primary: {
-      backgroundColor: 'var(--accent)',
-      color: '#ffffff',
-    },
-    outline: {
-      backgroundColor: 'transparent',
-      color: 'var(--accent)',
-      border: '2px solid var(--accent)',
-    },
+    primary:
+      'bg-primary text-white hover:bg-primary-hover hover:shadow-lg hover:-translate-y-0.5',
+    outline:
+      'bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-white hover:-translate-y-0.5',
   };
 
-  const style = { ...baseStyles, ...variants[variant] };
+  const classes = `${base} ${variants[variant]}`;
 
   if (href) {
     return (
-      <a href={href} style={style} {...props}>
+      <a href={href} className={classes} {...props}>
         {children}
       </a>
     );
   }
 
   return (
-    <button style={style} onClick={onClick} {...props}>
+    <button className={classes} onClick={onClick} {...props}>
       {children}
     </button>
   );

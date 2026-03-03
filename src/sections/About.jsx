@@ -1,48 +1,39 @@
 function About() {
+  const stats = [
+    { label: 'Projects', value: '5+' },
+    { label: 'Experience', value: '2+ Years' },
+    { label: 'Technologies', value: '10+' },
+    { label: 'Companies', value: '2' },
+  ];
+
   return (
-    <section id="about" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-      <div className="container">
-        <h2 className="section-title">About Me</h2>
-        <p className="section-subtitle">Get to know me better</p>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '3rem',
-          alignItems: 'center',
-        }}>
+    <section id="about" className="py-20 bg-alt bg-gray-50">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl font-bold mb-2">About Me</h2>
+        <p className="text-muted text-gray-500 mb-10">Get to know me better</p>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8 }}>
-              I'm a web developer with a passion for creating clean, efficient,
-              and user-friendly applications. I enjoy turning complex problems
-              into simple, beautiful solutions.
+            <p className="text-muted text-gray-600 leading-relaxed mb-4">
+              WordPress Developer with hands-on experience building responsive
+              websites. Also experienced in frontend development using React,
+              Vite, and Redux Toolkit, focusing on clean UI and API integration.
             </p>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginTop: '1rem' }}>
-              When I'm not coding, you can find me exploring new technologies,
-              contributing to open source, or learning something new.
+            <p className="text-muted text-gray-600 leading-relaxed">
+              Comfortable working in team environments and delivering reliable
+              solutions within deadlines. Passionate about writing clean,
+              maintainable code and creating seamless user experiences.
             </p>
           </div>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '1.5rem',
-          }}>
-            {[
-              { label: 'Projects', value: '10+' },
-              { label: 'Experience', value: '2+ Years' },
-              { label: 'Technologies', value: '15+' },
-              { label: 'Commits', value: '500+' },
-            ].map((stat) => (
-              <div key={stat.label} style={{
-                textAlign: 'center',
-                padding: '1.5rem',
-                backgroundColor: 'var(--card-bg)',
-                borderRadius: '12px',
-                border: '1px solid var(--border)',
-              }}>
-                <h3 style={{ fontSize: '1.5rem', color: 'var(--accent)', fontWeight: 700 }}>
-                  {stat.value}
-                </h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+
+          <div className="grid grid-cols-2 gap-4">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="card bg-white text-center p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow duration-300"
+              >
+                <h3 className="text-2xl font-bold text-primary">{stat.value}</h3>
+                <p className="text-muted text-gray-500 text-sm mt-1">
                   {stat.label}
                 </p>
               </div>
