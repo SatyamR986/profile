@@ -36,9 +36,9 @@ function App() {
           <Education />
         </div>
 
-        <SectionReveal effect="vortex" id="contact">
+        <div id="contact">
           <Contact />
-        </SectionReveal>
+        </div>
       </MainLayout>
     </ThemeProvider>
   );

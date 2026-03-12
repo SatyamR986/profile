@@ -1,12 +1,14 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 function Footer() {
   const year = new Date().getFullYear();
 
   const socials = [
-    { label: 'GitHub', href: 'https://github.com/AlphaisOnline' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/' },
-    { label: 'Email', href: 'mailto:hello@satyamregmi.com' },
+    { label: "GitHub", href: "https://github.com/SatyamR986" },
+    {
+      label: "Email",
+      href: "https://mail.google.com/mail/?view=cm&to=sregmi986@gmail.com",
+    },
   ];
 
   return (
@@ -23,7 +25,7 @@ function Footer() {
             <a
               href="#hero"
               className="text-3xl font-bold text-white tracking-tight hover:text-accent transition-colors duration-300"
-              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+              style={{ fontFamily: "Space Grotesk, sans-serif" }}
             >
               SR<span className="text-accent">.</span>
             </a>
