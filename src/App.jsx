@@ -1,6 +1,6 @@
-import { ParallaxProvider } from 'react-scroll-parallax';
 import { ThemeProvider } from './context/ThemeContext';
 import MainLayout from './layouts/MainLayout';
+import SectionReveal from './components/SectionReveal/SectionReveal';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Skills from './sections/Skills';
@@ -12,19 +12,35 @@ import './index.css';
 
 function App() {
   return (
-    <ParallaxProvider>
-      <ThemeProvider>
-        <MainLayout>
-          <Hero />
+    <ThemeProvider>
+      <MainLayout>
+        <Hero />
+
+        <SectionReveal effect="portal" id="about">
           <About />
-          <Skills />
+        </SectionReveal>
+
+        <SectionReveal effect="tilt" id="projects">
           <Projects />
+        </SectionReveal>
+
+        <SectionReveal effect="glitch" id="skills">
+          <Skills />
+        </SectionReveal>
+
+        <SectionReveal effect="rise" id="experience">
           <Experience />
+        </SectionReveal>
+
+        <SectionReveal effect="zoom" id="education">
           <Education />
+        </SectionReveal>
+
+        <SectionReveal effect="vortex" id="contact">
           <Contact />
-        </MainLayout>
-      </ThemeProvider>
-    </ParallaxProvider>
+        </SectionReveal>
+      </MainLayout>
+    </ThemeProvider>
   );
 }
 

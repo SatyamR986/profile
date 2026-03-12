@@ -1,27 +1,76 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { education } from '../data/skills';
 
 function Education() {
-  return (
-    <section id="education" className="py-20">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-2">Education</h2>
-        <p className="text-muted text-gray-500 mb-10">My academic background</p>
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {education.map((edu) => (
-            <div
+  const y = useTransform(scrollYProgress, [0, 1], ['40px', '-40px']);
+
+  return (
+    <section ref={sectionRef} className="py-28 relative overflow-hidden">
+      <motion.div style={{ y }} className="max-w-7xl mx-auto px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <span className="text-accent text-xs font-semibold tracking-[0.3em] uppercase drop-shadow-sm">
+            Background
+          </span>
+          <h2
+            className="text-4xl md:text-5xl font-bold text-white mt-3 leading-tight drop-shadow-lg"
+            style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+          >
+            Education
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {education.map((edu, i) => (
+            <motion.div
               key={edu.degree}
-              className="card bg-white p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow duration-300"
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
+              className="glass-card border border-white/10 p-8 rounded-2xl hover:border-accent/30 hover:shadow-lg hover:shadow-accent/10 transition-all duration-400 group relative overflow-hidden"
             >
-              <h3 className="text-lg font-semibold mb-1">{edu.degree}</h3>
-              <p className="text-primary font-medium text-sm">{edu.institution}</p>
-              <p className="text-muted text-gray-500 text-sm mt-1">
-                {edu.location} • {edu.year}
+              {/* Accent corner */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-accent/5 rounded-bl-full group-hover:bg-accent/15 transition-colors duration-400" />
+
+              <span className="text-accent/40 text-sm font-mono group-hover:text-accent/70 transition-colors duration-300">
+                {edu.year}
+              </span>
+
+              <h3
+                className="text-xl font-bold text-white mt-3"
+                style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+              >
+                {edu.degree}
+              </h3>
+
+              <p className="text-accent font-semibold text-sm mt-2">
+                {edu.institution}
               </p>
-            </div>
+
+              <p className="text-white/50 text-sm mt-2 flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                {edu.location}
+              </p>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
