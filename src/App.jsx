@@ -32,9 +32,9 @@ function App() {
           <Experience />
         </SectionReveal>
 
-        <SectionReveal effect="zoom" id="education">
+        <div id="education">
           <Education />
-        </SectionReveal>
+        </div>
 
         <SectionReveal effect="vortex" id="contact">
           <Contact />

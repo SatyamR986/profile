@@ -1,24 +1,15 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { education } from '../data/skills';
 
 function Education() {
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ['40px', '-40px']);
-
   return (
-    <section ref={sectionRef} className="py-28 relative overflow-hidden">
-      <motion.div style={{ y }} className="max-w-7xl mx-auto px-8">
+    <section className="py-28 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5 }}
           className="mb-16"
         >
           <span className="text-accent text-xs font-semibold tracking-[0.3em] uppercase drop-shadow-sm">
@@ -36,10 +27,10 @@ function Education() {
           {education.map((edu, i) => (
             <motion.div
               key={edu.degree}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="glass-card border border-white/10 p-8 rounded-2xl hover:border-accent/30 hover:shadow-lg hover:shadow-accent/10 transition-all duration-400 group relative overflow-hidden"
             >
               {/* Accent corner */}
@@ -70,7 +61,7 @@ function Education() {
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
