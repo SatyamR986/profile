@@ -1,26 +1,36 @@
+import proj1 from '../assets/images/proj-1.png';
+import proj2 from '../assets/images/proj-2.png';
+import proj3 from '../assets/images/proj-3.png';
+
 export const projects = [
   {
-    title: 'Traffic Management System',
+    title: 'inTalent',
     description:
-      'A platform that allows users to check traffic offenses, locate nearby traffic stations, and manage paid/unpaid bills. Admins can issue bills and verify payment statuses. Built with PHP, JavaScript, and MySQL.',
-    tags: ['PHP', 'JavaScript', 'MySQL'],
-    liveUrl: '',
-    repoUrl: 'https://github.com/AlphaisOnline/Traffic-Management-System/tree/master',
+      'A professional networking and certification platform where users can earn verified certificates, enroll in courses, take MCQ exams, and apply for job portals posted by organizations like LinkedIn meets e-learning.',
+    tags: ['React', 'Tailwind', 'Redux Toolkit', 'Vite'],
+    liveUrl: 'https://intalentnepal.com',
+    repoUrl: '',
+    image: proj1,
+    type: 'Web App',
+  },
+  {
+    title: 'Revo Renovation',
+    description:
+      'A renovation company website showcasing home and commercial renovation services, featuring project galleries, service breakdowns, client testimonials, and quote request forms.',
+    tags: ['WordPress', 'Sass', 'PHP'],
+    liveUrl: 'https://revorenovation.com.au/',
+    repoUrl: '',
+    image: proj3,
+    type: 'WordPress',
   },
   {
     title: 'Love and Support Care',
     description:
-      'Designed and developed a responsive WordPress website with user-friendly navigation, accessibility features, custom themes, and interactive plugins including forms and sliders.',
-    tags: ['WordPress', 'CSS', 'PHP'],
+      'An aged care services website connecting elderly individuals and their families with compassionate support, featuring service listings, carer profiles, and easy enquiry forms.',
+    tags: ['WordPress', 'Sass', 'PHP'],
     liveUrl: 'https://loveandsupportcare.com.au/',
     repoUrl: '',
-  },
-  {
-    title: 'inTalent',
-    description:
-      'Built and polished admin and user dashboards featuring certificate creation, approval workflows, enrollment, MCQ exams with tab-change detection, and real-time results. Managed state with Redux Toolkit across the platform.',
-    tags: ['React', 'Redux Toolkit', 'Vite', 'REST API'],
-    liveUrl: 'https://staging-user-intalent.skillmuseum.org/',
-    repoUrl: '',
+    image: proj2,
+    type: 'WordPress',
   },
 ];

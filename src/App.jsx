@@ -1,14 +1,14 @@
-import { ThemeProvider } from './context/ThemeContext';
-import MainLayout from './layouts/MainLayout';
-import SectionReveal from './components/SectionReveal/SectionReveal';
-import Hero from './sections/Hero';
-import About from './sections/About';
-import Skills from './sections/Skills';
-import Projects from './sections/Projects';
-import Experience from './sections/Experience';
-import Education from './sections/Education';
-import Contact from './sections/Contact';
-import './index.css';
+import { ThemeProvider } from "./context/ThemeContext";
+import MainLayout from "./layouts/MainLayout";
+import SectionReveal from "./components/SectionReveal/SectionReveal";
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
+import Experience from "./sections/Experience";
+import Education from "./sections/Education";
+import Contact from "./sections/Contact";
+import "./index.css";
 
 function App() {
   return (
@@ -20,9 +20,9 @@ function App() {
           <About />
         </SectionReveal>
 
-        <SectionReveal effect="tilt" id="projects">
+        <div id="projects">
           <Projects />
-        </SectionReveal>
+        </div>
 
         <SectionReveal effect="glitch" id="skills">
           <Skills />
