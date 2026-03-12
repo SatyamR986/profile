@@ -1,15 +1,15 @@
 export const skills = [
   {
     title: 'Frontend',
-    items: ['HTML', 'CSS', 'JavaScript', 'React', 'Vite', 'Redux Toolkit', 'Tailwind CSS'],
+    items: ['JavaScript', 'JQuery', 'React', 'Vite', 'Redux Toolkit', 'Tailwind', 'Sass', 'Bootstrap'],
   },
   {
-    title: 'CMS & Backend',
-    items: ['WordPress', 'PHP', 'MySQL', 'REST APIs'],
+    title: 'Backend',
+    items: ['PHP', 'MySQL'],
   },
   {
     title: 'Tools & Workflow',
-    items: ['Git', 'GitHub', 'VS Code', 'npm', 'Figma'],
+    items: ['Git', 'GitHub', 'Figma'],
   },
 ];
 
